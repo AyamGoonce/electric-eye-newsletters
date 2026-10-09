@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "editions": {
+    "monthly": {
+      "identifier": "2026-09",
+      "path": "monthly/2026-09.html"
+    }
+  }
+}
