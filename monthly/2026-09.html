@@ -3448,7 +3448,10 @@
       function reportHeight() {
         if (window.parent === window) return;
 
-        var height = Math.ceil(document.documentElement.scrollHeight);
+        var wrapper = document.querySelector('.ee-wrapper');
+        if (!wrapper) return;
+
+        var height = Math.ceil(wrapper.getBoundingClientRect().height);
 
         window.parent.postMessage({
           type: 'electric-eye-newsletter-height',
@@ -3483,7 +3486,10 @@
       });
 
       if ('ResizeObserver' in window) {
-        new ResizeObserver(reportHeight).observe(document.body);
+        var wrapper = document.querySelector('.ee-wrapper');
+        if (wrapper) {
+          new ResizeObserver(reportHeight).observe(wrapper);
+        }
       }
 
       reportHeight();
