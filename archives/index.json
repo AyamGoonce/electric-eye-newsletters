@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "editions": {
+    "weekly": [
+      {
+        "identifier": "2026-W42",
+        "path": "weekly/2026-W42.html",
+        "label": "Week 42 — October 12, 2026"
+      },
+      {
+        "identifier": "2026-W41",
+        "path": "weekly/2026-W41.html",
+        "label": "Week 41 — October 5, 2026"
+      }
+    ],
+    "monthly": [
+      {
+        "identifier": "2026-09",
+        "path": "monthly/2026-09.html",
+        "label": "September 2026"
+      }
+    ]
+  }
+}
