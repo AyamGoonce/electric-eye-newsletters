@@ -3,6 +3,11 @@
   "editions": {
     "weekly": [
       {
+        "identifier": "2026-W43",
+        "path": "weekly/2026-W43.html",
+        "label": "Week 43 — October 19, 2026"
+      },
+      {
         "identifier": "2026-W42",
         "path": "weekly/2026-W42.html",
         "label": "Week 42 — October 12, 2026"
