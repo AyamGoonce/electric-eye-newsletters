@@ -1,1 +1,1 @@
-window.ElectricEyeNewsletterLatest = Object.freeze({"schema_version":1,"latest":{"identifier":"2026-W43","path":"weekly/2026-W43.html"},"editions":{"monthly":{"identifier":"2026-09","path":"monthly/2026-09.html"},"weekly":{"identifier":"2026-W43","path":"weekly/2026-W43.html"}}});
+window.ElectricEyeNewsletterLatest = Object.freeze({"schema_version":1,"latest":{"identifier":"2026-10","path":"monthly/2026-10.html"},"editions":{"monthly":{"identifier":"2026-10","path":"monthly/2026-10.html"},"weekly":{"identifier":"2026-W43","path":"weekly/2026-W43.html"}}});
