@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Electric Eye — 2026-W44 Newsletter</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111114;
+      --panel: #1b1b20;
+      --line: #35353d;
+      --text: #f0f0f1;
+      --muted: #aaaaaf;
+      --accent: #d82323;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 Arial, Helvetica, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .ee-wrapper { max-width: 1140px; margin: auto; padding: 30px 24px 90px; }
+    .ee-header {
+      text-align: center;
+      padding: 65px 20px 55px;
+      border-bottom: 1px solid var(--line);
+    }
+    .ee-brand {
+      display: inline-block;
+      color: var(--text);
+      text-transform: uppercase;
+      font-size: clamp(42px, 8vw, 92px);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      line-height: 1;
+    }
+    .ee-kicker {
+      color: var(--accent);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-top: 26px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .ee-header h1 { font-size: clamp(26px, 4vw, 46px); margin: 10px 0; }
+    .ee-header p { color: var(--muted); margin: 0; }
+    .ee-socials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 24px;
+    }
+    .ee-socials a {
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+    }
+    .ee-socials a:hover { color: var(--accent); }
+    .ee-socials svg {
+      width: 25px;
+      height: 25px;
+      fill: currentColor;
+    }
+    .ee-forum {
+      text-align: center;
+      margin-top: 65px;
+      padding: 25px 15px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .ee-forum a { color: var(--accent); }
+    .ee-section { padding-top: 55px; }
+    .ee-section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 15px;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 25px;
+    }
+    .ee-section-heading h2 { font-size: 28px; margin: 0 0 12px; }
+    .ee-section-heading span { color: var(--muted); font-size: 13px; }
+    .ee-article-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .ee-article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      height: 100%;
+      overflow: hidden;
+    }
+    .ee-article-image {
+      display: block;
+      aspect-ratio: 3 / 2;
+      background: #29292f;
+      overflow: hidden;
+    }
+    .ee-article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .ee-article-body { padding: 13px; }
+    .ee-date {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: .08em;
+      margin-bottom: 9px;
+    }
+    .ee-article h3 { font-size: 16px; line-height: 1.35; margin: 0 0 8px; }
+    .ee-article p { color: #c6c6ca; font-size: 12px; line-height: 1.5; margin: 0 0 12px; }
+    .ee-read { color: var(--accent); font-size: 13px; font-weight: bold; }
+    .ee-extra { display: none; }
+    .ee-expand {
+      display: block;
+      margin: 28px auto 0;
+      color: var(--accent);
+      background: transparent;
+      border: 1px solid var(--accent);
+      padding: 12px 28px;
+      cursor: pointer;
+      font: inherit;
+    }
+    .ee-expand:hover { background: var(--accent); color: #111; }
+    .ee-intro { color: var(--muted); }
+    .ee-concert-list { list-style: none; padding: 0; }
+    .ee-concert {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr) 70px;
+      align-items: center;
+      gap: 18px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .ee-concert time { color: var(--accent); font-size: 13px; }
+    .ee-concert small { display: block; color: var(--muted); }
+    .ee-calendar-link { color: var(--accent); font-size: 13px; text-align: right; }
+    .ee-calendar-footer { margin-top: 30px; color: var(--accent); }
+    .ee-footer {
+      text-align: center;
+      margin-top: 70px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (min-width: 681px) and (max-width: 950px) {
+      .ee-article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .ee-wrapper { padding: 15px 15px 60px; }
+      .ee-header { padding: 40px 10px; }
+      .ee-article-grid { grid-template-columns: 1fr; }
+      .ee-section-heading h2 { font-size: 23px; }
+      .ee-concert { grid-template-columns: 85px minmax(0, 1fr); }
+      .ee-calendar-link { display: none; }
+    }
+    </style>
+</head>
+<body>
+  <main class="ee-wrapper">
+    <header class="ee-header">
+      <a class="ee-brand" href="https://www.electriceyerock.com/" aria-label="Electric Eye homepage">Electric Eye</a>
+      <div class="ee-kicker">Weekly Newsletter</div>
+      <h1>2026-W44</h1>
+      <p>Concerts, reviews, interviews, news and playlists.</p>
+      <nav class="ee-socials" aria-label="Electric Eye social media">
+        <a href="https://www.facebook.com/ElectricEyeRock/"
+           aria-label="Electric Eye on Facebook"
+           title="Facebook" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12Z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/electric_eye_photo/"
+           aria-label="Electric Eye on Instagram"
+           title="Instagram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"
+                  fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4.5"
+                    fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="18" cy="6" r="1.2"/>
+          </svg>
+        </a>
+      </nav>
+    </header>
+    
+    <section class="ee-section">
+      <div class="ee-section-heading">
+        <h2><a href="https://www.electriceyerock.com/p/concert-photos-reviews.html">Concert Reviews</a></h2>
+        <span>9 articles</span>
+      </div>
+      <div class="ee-article-grid"><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/simple-plan-accor-arena-paris-october.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgTy6rLxnF339WiYD0FcJzkU1rJzhrmmb28m4bV1vUKXhWG4s8ICaP_Ko1q2K9rdyqu8foh-1FrvfSOEgSbTIvnLsAmPRVcCRNUayc6a8pYaGFbnJiChcLLNHLDzs-mkFj0-uVXaCSNW9d_R30mxhdJzJaB5eDm6yrynM5fQSq7BnHBXH4ZZ2nf-0ycJPM/w1200-h800/Simple%20Plan%200120261101Accor%20ArenaParis_46.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-31</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/simple-plan-accor-arena-paris-october.html">Simple Plan @ Accor Arena, Paris - October 31st, 2026</a></h3>
+        <p>Simple Plan&#x27;s triumphant arena tour culminates in Paris on Halloween night, with a sold-out Accor Arena and 20,000 people ready to party with the Canadian Pop Punks. For ninety minutes, the band unleashes a relentless barrage of high-energy tunes, infectious melodies, massive singalong choruses and…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/simple-plan-accor-arena-paris-october.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/ga-20-new-morning-paris-october-30th.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjt4YenDo9InMObNXp_rVyIfe1ysIeEIGD5yAb9Enoj7m846KPcq7BFky-oY3WNooAFvZXzHBXIJo_OETJ-zFcURdXAstF53f8-9bimW_JFJ_WIxMg1ZpjKtlF3Ko7MmtHKiBNcp2VQXaeiERWp7R4ekDEVqkHB-Me42-dt4u2L5k7OGINrPdUiNejOhW4/w1200-h800/GA-20%200120261030New%20MorningParis_22.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-30</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/ga-20-new-morning-paris-october-30th.html">GA-20 @ New Morning, Paris - October 30th, 2026</a></h3>
+        <p>The Blues are like pizza: there&#x27;s no bad recipe, but Chicago-style might just be the best. And that&#x27;s as far as I&#x27;m willing to take that analogy. GA-20 are a trio with a particular affection for the rougher, rowdier side of the Blues, the kind that doesn&#x27;t need much in the way of embellishment to…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/ga-20-new-morning-paris-october-30th.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/duran-duran-accor-arena-paris-october.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMbVcnMPw-bMVo-8qbRg22M1GsCTYE1Rt0_77OjBx88aiFetA8FHH-c9Scx0sJJ_ll4QIbZ-2nVmERzGH8at2nB7BApkz3_GcHqYWBOg8CrCyG-jRnTFnlDzKqgblpTpsipq0mA2qABtid2hGwmI7_XcwCbCe5LMk9d7U2qw0wYNCg08CXiQGJeL98YI0/w1200-h800/Duran%20Duran%20CAM01%200220261029ZenithParis_134.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-28</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/duran-duran-accor-arena-paris-october.html">Duran Duran @ Accor Arena, Paris - October 28th, 2026</a></h3>
+        <p>Fashion, both musical and sartorial, has always been integral to Duran Duran. But in 2026, with its members approaching seventy, the band has long since outgrown the tyranny of looking good, sounding current and keeping up with whatever happens to be fashionable. They no longer have to play the…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/duran-duran-accor-arena-paris-october.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/the-molotovs-accor-arena-paris-october.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitA5ApUaw6nXJV4m11m0J6RwaeFJ_SIRjKAR6LY0hfNHdF1VF6IUz_6_20hUQxmAcGAfzfjVtmrmmypPfBQatIJ8bMpV9xi7MqH5_gjR0FPwxgaF0fLf6P0f3DNORRcMIDb_HM2EyY8psHXFGbaBP2V6qyYM_-RbSctc4riape4HceldAlFJZMSkmJ980/w1200-h800/IMG_5029_still.jpeg" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-28</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/the-molotovs-accor-arena-paris-october.html">The Molotovs @ Accor Arena, Paris - October 28th, 2026</a></h3>
+        <p>The Molotovs have unfinished business in Paris. Their last headlining show, at La Machine du Moulin Rouge earlier this month, was cut short after just thirty minutes when frontman Mathew Cartlidge fell ill midway through the set. Tonight&#x27;s support slot with Duran Duran at the Accor Arena offers a…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/the-molotovs-accor-arena-paris-october.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/melanie-c-la-machine-du-moulin-rouge.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgDibRdDPRg6jciekNXGHnhblnFu9SQ2XHz4JnK-v7cC96nJ3mfKFnFw3bNo-f38UiT3dlIPvqKMOM5l9r4Mu0VWKcY4-XrNWxpotLxvCB8HBwGrQBnYbrK8_srWapKDQV8bjTOT4X9hCXZB6Pzhl3dnqFVovrArg4WdLo0g7Lh8dH-NyGTaFpJlNlDB5s/w1200-h800/Melanie%20C%200520261028La%20Machine%20du%20Moulin%20RougeParis_99.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-27</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/melanie-c-la-machine-du-moulin-rouge.html">Melanie C @ La Machine du Moulin Rouge, Paris - October 27th, 2026</a></h3>
+        <p>Some artists hold a mirror up to society, making dark, confrontational music for troubled times. Others would rather make you forget your troubles for a couple of hours and dance your arse off. Both are perfectly legitimate responses to the state of the world, and there&#x27;s a time and place for each.…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/melanie-c-la-machine-du-moulin-rouge.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/sophie-and-giants-la-machine-du-moulin.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisUDKp9LqNZiMUU5u_o2ZnlHnUNHIir3rFO991cqqN-ggUrkqmt0k9EHevmEXMQJqk73M2ihZZ6l3vxwWTOgkZlW3kpcI4eKR3j-rF4jvrRPdF1p_XXNOVcEaUA4eeSlDkOUQ0XaGjmrv9LUPQZVnvRqFasnlKbVbCSJ1R_X7Ht7bQp4Z2ZRBuIktbrA0/w1200-h800/Sophie%20and%20the%20Giants20261028La%20Machine%20du%20Moulin%20RougeParis_24.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-27</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/sophie-and-giants-la-machine-du-moulin.html">Sophie and the Giants @ La Machine du Moulin Rouge, Paris - October 27th, 2026</a></h3>
+        <p>Sophie and the Giants deliver a brisk eight-song set of infectious Dance Pop, steeped in eighties influences but with enough contemporary polish to keep things fresh. Frontwoman Sophie Scott brings plenty of energy to the stage, backed by a collection of catchy, well-crafted tunes that get the crowd…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/sophie-and-giants-la-machine-du-moulin.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/dj-cry-baby-la-machine-du-moulin-rouge.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjNmZt1Smwaorfrfal5EUyjbkq2fQ8q5jdUd2Vlmxmed0l8hxk-MIJzO5l8A4Bgtu_h7KdMIAowvfcjUsWTS6rJ3vICup-UMunIW8meD5JFV3LEe3T1h2YHuZ_I8PkiX4M90cdkGIiaC9XFAMJYjkBOr4BqY9aY_GFwGNM5fs-CQabe7n2nfp0EoJDbcx4/w1200-h800/DJ%20Crybaby20261027La%20Machine%20du%20Moulin%20RougeParis_16.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-27</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/dj-cry-baby-la-machine-du-moulin-rouge.html">DJ Cry Baby @ La Machine du Moulin Rouge, Paris - October 27th, 2026</a></h3>
+        <p></p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/dj-cry-baby-la-machine-du-moulin-rouge.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/oranssi-pazuzu-la-machine-du-moulin.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvKk-VMuTKVR5kr_Dzqnr62wnVoJOqVu5E4wArxYrcTwH2DnBGq6_d_FlmvCQjXhnQBKtS6ZAwdMNfTz__UUIIklVpz05UpFJorwZSpEI7sD_QU2aUlTRvELpbCJgAwzHEZRapofxdf3sAn7nxGJ3XP6MYdLPpx0JoX_JzDNm5Ay_2JwpHPt7xEl1bQ9c/w1200-h800/Oranssi%20Pazuzu20261027La%20Machine%20du%20Moulin%20RougeParis_23.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-26</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/oranssi-pazuzu-la-machine-du-moulin.html">Oranssi Pazuzu @ La Machine du Moulin Rouge, Paris - October 26th, 2026</a></h3>
+        <p>Black Metal and Psychedelic Rock might seem like two irreconcilable strains of loud music: one built on tightly controlled intensity, the other on sprawling improvisation and extended freak-outs. But they have plenty in common, starting with a healthy appetite for noise. Feedback, distortion and…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/oranssi-pazuzu-la-machine-du-moulin.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry ee-extra">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/mur-la-machine-du-moulin-rouge-paris.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhtrAG6vybiN99QZv8KAuyvpD2cteFgXWR05yh4h3fmA9LFdhcUKzOSaUgvm-QCC12MTdwve8Q_HXraUadIbZmQhBave1luspErZnWWyxyh7HMrm_hWKvYk1riK6ftvR0zczU0OAVVS_6o6aWEhJptYVau-1zXydT3X9E5jMsVN0BRomVAHpnP3rnd8hsI/w1200-h800/Mu%CC%80r20261027La%20Machine%20du%20Moulin%20RougeParis_36.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-26</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/mur-la-machine-du-moulin-rouge-paris.html">Múr @ La Machine du Moulin Rouge, Paris - October 26th, 2026</a></h3>
+        <p>Iceland&#x27;s Múr are a young band with a taste for atmospheric Metal that builds and builds until something has to give. Think Sigur Rós for Metalheads, or Godspeed You! Black Emperor if they&#x27;d spent their formative years listening to Emperor. Their music moves between brooding, expansive passages and…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/mur-la-machine-du-moulin-rouge-paris.html">Read article →</a>
+      </div>
+    </article>
+    </div></div>
+      <button class="ee-expand" type="button" aria-expanded="false">Show all 9 articles ↓</button>
+    </section>
+    
+    <section class="ee-section">
+      <div class="ee-section-heading">
+        <h2><a href="https://www.electriceyerock.com/p/album-reviews.html">Album Reviews</a></h2>
+        <span>2 articles</span>
+      </div>
+      <div class="ee-article-grid"><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/album-review-asia-indigo.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZdyKvQZoUGLHrTHX-vXGZrQiIZCRLODFyZk2buxRrbQUxkNgqZywfJ7lyD978knopiLd5OZkesT8UtKY-rZM7362IwUsLmBG-6XjCXi8m12EBdkiHp7bdqrtjBTdx6zquBK9zJu4DwbPt0QZCHwgG7wz1pbEL8wMyShvi4dMRtLAk8veIAlbWyWXchN0/w1200-h800/AsiaIndigoCover.jpg" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-30</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/album-review-asia-indigo.html">Album Review: Asia - Indigo</a></h3>
+        <p>Indigo is Asia&#x27;s first studio album since 2014&#x27;s Gravitas, and it isn&#x27;t exactly business as usual for the progressive-rock supergroup. For one thing, the lineup has been extensively reconstructed following the death of original bassist and vocalist John Wetton, leaving keyboardist Geoff Downes as…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/album-review-asia-indigo.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/album-review-hatebreed-fatal-paradox.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhK5n9CzfwNtE_Rxrue7MRBJiBytowQ6gwHXxwNOi0WEghJpWjP2odpkbcvxVwEHP-kOwWEei_kz0GyklvBa5tmPMfTx-THAxNbFu-zibSyf-ps70-bl29xObOXWIhmue95ChqInz3HowGOn6-d7iZtUFtQRcYsmCIxi_jQyoggq5ey1X5VUc8gPAr6XAM/w1200-h800/HB27.jpg" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-30</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/album-review-hatebreed-fatal-paradox.html">Album Review: Hatebreed - Fatal Paradox</a></h3>
+        <p>Somehow, Hatebreed have been around for more than thirty years and have become elder statesmen of the very genre they helped establish. It&#x27;s a rather improbable distinction for a band whose music has always been built around hostility, aggression and the sort of physical intensity that seems more…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/album-review-hatebreed-fatal-paradox.html">Read article →</a>
+      </div>
+    </article>
+    </div></div>
+      
+    </section>
+    
+    <section class="ee-section">
+      <div class="ee-section-heading">
+        <h2><a href="https://www.electriceyerock.com/p/news.html">News</a></h2>
+        <span>6 articles</span>
+      </div>
+      <div class="ee-article-grid"><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/u2-bring-greatest-show-on-earth-to-paris.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9GXLQvOTyj7PNdFuWvPGijMZsxiCabz0RDwUIuqcOKHWmcDg3t4YaAsFq-EmfUj3fOok-N3GQijlvOXO7yU2kTkgyZGeCh27R1tAKN6CQz21GIrLjrUKXKn-cCpAAxFN_yI_UiIopCKmbnApZ0bAqoyw6fIbryJwGtxtkgZrhclrtRMi64x-XXm_Bg6U/w1200-h800/U2Paris.jpg" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-29</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/u2-bring-greatest-show-on-earth-to-paris.html">U2 Bring The Greatest Show On Earth to Paris</a></h3>
+        <p>U2 return to the Stade de France on May 5 and 8, 2027, bringing The Greatest Show On Earth world tour back to a stadium they have already filled repeatedly. The Paris dates are part of the European leg of a tour built around Carnaval De Luz, the band’s 16th studio album, due November 13. Produced by…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/u2-bring-greatest-show-on-earth-to-paris.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/kiss-reach-end-of-road-with-new.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigyRWHs4Wz6XbUmveReBwl7uVeLIP_VSI1T2ReGr84OrvistnUOiA0sBKnKpjas85cx7VtzE-gO0nvBXMlq-iNgll3LEWhTfVNncGnu-XKOU2kD0ri8td-TKBWbf2IjkgBPVYgwzmhRms/w1200-h800/KISS+June+16_4.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-27</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/kiss-reach-end-of-road-with-new.html">KISS Reach The End of the Road With New Documentary</a></h3>
+        <p>KISS have announced End of the Road, a new two-part documentary chronicling the band’s final tour from the inside. Directed by DJ Viola and produced with Mercury Studios and Pophouse, the film follows the End of the Road World Tour through its backstage friction, health scares, technical failures…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/kiss-reach-end-of-road-with-new.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/rick-nielsen-sells-five-neck-as-cheap.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUKbxpojBsp-mHuDA-FR2jAEz7LdsxYtD4glgkvnG8YkZHEti94_PHiLruo6NnJJ9WkXiC69Ld5gxz9Ps6rTeSWxchDSxktKcuu7MFYPFUPkWS8OpoNwwssKJif2fg5MgRVcqFqsesV2J7Bx85Zt_xA3ZAm9jaszh24_NXOrUbEGxk5eJHA6CTYsLrVow/w1200-h800/NYC%20etc.15_08_2019NYCU.S.A._92.jpg" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-27</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/rick-nielsen-sells-five-neck-as-cheap.html">Rick Nielsen Sells the Five-Neck as Cheap Trick Step Off the Road</a></h3>
+        <p>Rick Nielsen’s famous five-neck Hamer has sold for $313,600, nearly twice its pre-auction estimate, as part of a major sale of the Cheap Trick guitarist’s personal collection. The 2004 custom instrument — one of several five-neck models built for Nielsen and an instantly recognisable part of his…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/rick-nielsen-sells-five-neck-as-cheap.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/bruce-dickinson-returns-to-olympia-for.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIO_f7dYlTUb0D-yRZTr9gANNJO_CSsMnreXlrKe06BUNF7iVtb2eJ42wKtBieghizKwOqLLMTLFDlMIrT2GD50KsHx75dZykIM3LRTGJpS56jd0_DpvGZjXh_WsKb1oM8ShBS_hk9EX-7GN8zP-Sp-NCieoXpH3vde9xjDGuOgUzReAqZRUN1ccRtgww/w1200-h800/Iron%20Maiden20260620HellfestClisson_114.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-27</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/bruce-dickinson-returns-to-olympia-for.html">Bruce Dickinson Returns to the Olympia for the PsychoGod Tour</a></h3>
+        <p>Bruce Dickinson returns to the Olympia on December 10, 2027 as part of his PsychoGod Tour, three years after packing the same room on the Mandrake Project run. The Paris date comes at the end of a year built around Dickinson’s solo career, with a new studio album due in the first half of 2027 and a…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/bruce-dickinson-returns-to-olympia-for.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/heartworms-turn-lights-out-on-guess-im.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgr4rTu92ExcpDpcuxXvnY01ZnlYg8A1QLroS6SBMwx2BFSqnrmRXETnU_3Wfxjz4GnABKjoeBwmP_e8Bg1zngGtW0rKt_8s1wspbE5sa3GeJxZdaA0WuWoA9RMowuYZ77DzXwKaAWHBI6UWioQR4Y-ryGEpvLo_6n8cOsqG_30TkmlXjN12-ZQf8UYT7w/w1200-h800/Heartworks020325Petit%20BainParis.jpg" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-27</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/heartworms-turn-lights-out-on-guess-im.html">Heartworms Turn the Lights Out on “Guess I’m Stuck In The Dark”</a></h3>
+        <p>Heartworms have released “Guess I’m Stuck In The Dark,” the first glimpse of the follow-up to 2025 debut Glutton For Punishment. Jojo Orme pushes the project into a more dance-driven direction here, keeping the dark, clipped tension of her earlier work but setting it against a leaner groove and a…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/heartworms-turn-lights-out-on-guess-im.html">Read article →</a>
+      </div>
+    </article>
+    </div><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/bassist-andrew-rodin-exits-stoned-jesus.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhq_75dWnei0ZaHaLI8vgRjzXmrmaqvjb9_n-Gb7FWrDfMhBDQOi-3lhselxqMRTdyQtaKx-dJLP53oSD-T74pFn0XfAyic84tpYut5Vz2nHK0BePM5DOpyrJctL4ago4XmOpp6BcJGgB85UI6LAvTokkmHrJV6Fps16fSrLFj1Fwk4glbJBF1hdW53Dno/w1200-h800/Stoned%20Jesus20260620HellfestClisson_81.JPG" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-26</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/bassist-andrew-rodin-exits-stoned-jesus.html">Bassist Andrew Rodin Exits Stoned Jesus</a></h3>
+        <p>Stoned Jesus bassist Andrew Rodin has left the band, saying he needs to step away to focus on his mental health and recovery. In a personal statement, Rodin described the decision as difficult but necessary after struggling deeply with depression, adding that his health had reached a point where he…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/bassist-andrew-rodin-exits-stoned-jesus.html">Read article →</a>
+      </div>
+    </article>
+    </div></div>
+      
+    </section>
+    
+    <section class="ee-section">
+      <div class="ee-section-heading">
+        <h2><a href="https://www.electriceyerock.com/p/fridays-playlist.html">Friday&#x27;s Playlists</a></h2>
+        <span>1 articles</span>
+      </div>
+      <div class="ee-article-grid"><div class="ee-entry">
+    <article class="ee-article">
+      <a class="ee-article-image" href="https://www.electriceyerock.com/2026/10/fridays-playlist-desordem-e-regresso.html">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh2SxR8PFYPPby1jQ5596NP3V7efuJ7N6VhBfEmNLEY4jOpwTSEmK8TfwpKPO3NGbtvQZoGlJ9k3ui96yLq71Ltg5A-ZNOShtkpbVMXEoBI0_T4ihqEiuzcPEIu72s_gKMVi10bqq2xhBftkFI8skocl5-jgUMnR7zJsBFdJLRjKu85Su9Xh94FXPng-zg/w1200-h800/BRFL.jpg" alt="" loading="lazy">
+      </a>
+      <div class="ee-article-body">
+        <div class="ee-date">2026-10-30</div>
+        <h3><a href="https://www.electriceyerock.com/2026/10/fridays-playlist-desordem-e-regresso.html">Friday&#x27;s Playlist: Desordem e Regresso</a></h3>
+        <p>This Friday&#x27;s Playlist echoes Brazil&#x27;s recent elections, where far-right populism (let&#x27;s just call it what it is: fascism) suffered an unexpected defeat as Lula pulled off a remarkable comeback. Brazil has a long and colorful tradition of telling those in power exactly where they can stick their…</p>
+        <a class="ee-read" href="https://www.electriceyerock.com/2026/10/fridays-playlist-desordem-e-regresso.html">Read article →</a>
+      </div>
+    </article>
+    </div></div>
+      
+    </section>
+    
+    <section class="ee-section ee-calendar">
+      <div class="ee-section-heading">
+        <h2><a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html">Concert Calendar: newly-added shows</a></h2>
+        <span>56 concerts</span>
+      </div>
+      <p class="ee-intro">
+        Newly added concerts at selected Paris-area venues.
+      </p>
+      <ul class="ee-concert-list"><div class="ee-entry">
+    <li class="ee-concert">
+      <time datetime="2026-11-03">2026-11-03</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-ebc0a6456e6dd01a">Eagles of Death Metal</a>
+        <small>La Cigale</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-ebc0a6456e6dd01a">View →</a>
+    </li>
+    </div><div class="ee-entry">
+    <li class="ee-concert">
+      <time datetime="2026-11-29">2026-11-29</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-241050feeb6835ff">Årabrot</a>
+        <small>Petit Bain</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-241050feeb6835ff">View →</a>
+    </li>
+    </div><div class="ee-entry">
+    <li class="ee-concert">
+      <time datetime="2026-12-05">2026-12-05</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-efe5a4e5ca36eed2">Dis Fig</a>
+        <small>Petit Bain</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-efe5a4e5ca36eed2">View →</a>
+    </li>
+    </div><div class="ee-entry">
+    <li class="ee-concert">
+      <time datetime="2026-12-31">2026-12-31</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-f16709816bc9af9b">Le Grand Réveillon du Nouvel An</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-f16709816bc9af9b">View →</a>
+    </li>
+    </div><div class="ee-entry">
+    <li class="ee-concert">
+      <time datetime="2027-01-07">2027-01-07</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-76fb43417d98b958">Vernis Rouge</a>
+        <small>La Maroquinerie</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-76fb43417d98b958">View →</a>
+    </li>
+    </div><div class="ee-entry">
+    <li class="ee-concert">
+      <time datetime="2027-01-09">2027-01-09</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-4d57b9479693202e">Lacchesi &amp; Mac Declos</a>
+        <small>Élysée Montmartre</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-4d57b9479693202e">View →</a>
+    </li>
+    </div><div class="ee-entry">
+    <li class="ee-concert">
+      <time datetime="2027-01-23">2027-01-23</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-56862e3c29f81597">Ali Amran</a>
+        <small>Bataclan</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-56862e3c29f81597">View →</a>
+    </li>
+    </div><div class="ee-entry">
+    <li class="ee-concert">
+      <time datetime="2027-01-23">2027-01-23</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-4b185da366ab8d3c">Shien</a>
+        <small>Petit Bain</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-4b185da366ab8d3c">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-03">2027-02-03</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-972924bcc71f7e4f">CLIO</a>
+        <small>La Maroquinerie</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-972924bcc71f7e4f">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-05">2027-02-05</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-7eca8ba2124f975b">Haila y su orquesta</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-7eca8ba2124f975b">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-06">2027-02-06</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-924bf027a325b7b1">Leonid &amp; Friends</a>
+        <small>Bataclan</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-924bf027a325b7b1">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-14">2027-02-14</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-d7244e7ecb1a92b9">The Molotovs</a>
+        <small>La Cigale</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-d7244e7ecb1a92b9">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-15">2027-02-15</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-6e5c14d4bf6583fc">Jakov Jozinovic</a>
+        <small>L&#x27;Olympia Bruno Coquatrix</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-6e5c14d4bf6583fc">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-16">2027-02-16</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-f7ae4ed9d8a569c2">Jesse Welles</a>
+        <small>Le Trianon</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-f7ae4ed9d8a569c2">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-16">2027-02-16</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-e47f5065bc39c707">Oded Tzur Quartet</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-e47f5065bc39c707">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-18">2027-02-18</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-18163856b37f3a27">Thee Marloes</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-18163856b37f3a27">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-19">2027-02-19</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-f6b8517d6c68b436">Peaches</a>
+        <small>Le Trianon</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-f6b8517d6c68b436">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-19">2027-02-19</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-9aded4cbce63fee1">Seafret</a>
+        <small>La Machine du Moulin Rouge</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-9aded4cbce63fee1">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-20">2027-02-20</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-54c871dcf88d9be8">Klangphonics</a>
+        <small>La Cigale</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-54c871dcf88d9be8">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-02-28">2027-02-28</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-74b41872d46d8a98">Ocean Grove</a>
+        <small>Petit Bain</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-74b41872d46d8a98">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-03">2027-03-03</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-59a9f4a31293ff0a">Art Garfunkel</a>
+        <small>L&#x27;Olympia Bruno Coquatrix</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-59a9f4a31293ff0a">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-03">2027-03-03</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-a414f218f4e12e01">Chris Potter Trio</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-a414f218f4e12e01">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-03">2027-03-03</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-f289e02ebd1e5284">H Jeunecrack</a>
+        <small>Bataclan</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-f289e02ebd1e5284">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-05">2027-03-05</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-1c4daab0c33c9d63">Saint Etienne</a>
+        <small>Le Trianon</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-1c4daab0c33c9d63">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-11">2027-03-11</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-d66012f6fcab4a73">BUNT.</a>
+        <small>Le Zénith Paris – La Villette</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-d66012f6fcab4a73">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-11">2027-03-11</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-ba43cfe3c1afbb37">The Next Movement</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-ba43cfe3c1afbb37">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-15">2027-03-15</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-c89b04cc3351a8c9">Jacob Banks</a>
+        <small>Élysée Montmartre</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-c89b04cc3351a8c9">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-15">2027-03-15</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-2d954c26542a9bf3">Jazzbois</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-2d954c26542a9bf3">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-18">2027-03-18</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-79cb24b8c00002ae">David Krakauer&#x27;s Klezmer NY</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-79cb24b8c00002ae">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-19">2027-03-19</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-4d26db47dec4a62d">Kid Wise</a>
+        <small>La Maroquinerie</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-4d26db47dec4a62d">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-25">2027-03-25</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-9ab23783df3756ab">Emmet Cohen Trio</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-9ab23783df3756ab">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-26">2027-03-26</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-d668a7e22aaf00d2">Brooklyn Funk Essentials</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-d668a7e22aaf00d2">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-26">2027-03-26</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-fc68882ffff2c14b">le talu</a>
+        <small>La Maroquinerie</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-fc68882ffff2c14b">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-03-27">2027-03-27</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-bc0316c5a38af369">Raul Midón</a>
+        <small>New Morning</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-bc0316c5a38af369">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-04-09">2027-04-09</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-02415735e20d8014">Starseed’Z</a>
+        <small>La Cigale</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-02415735e20d8014">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-04-21">2027-04-21</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-32d1ee11216f53fd">The Cinematic Orchestra</a>
+        <small>Élysée Montmartre</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-32d1ee11216f53fd">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-04-23">2027-04-23</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-25f2e2a5f056ebea">Copycat</a>
+        <small>La Maroquinerie</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-25f2e2a5f056ebea">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-04-23">2027-04-23</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-7c4ebb62acf57055">Gans</a>
+        <small>Petit Bain</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-7c4ebb62acf57055">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-05-05">2027-05-05</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-15e813b58739776d">U2</a>
+        <small>Stade de France</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-15e813b58739776d">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-05-08">2027-05-08</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-66ae51eb4395f28a">U2</a>
+        <small>Stade de France</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-66ae51eb4395f28a">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-05-22">2027-05-22</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-e518f525c83f4882">Vitalic</a>
+        <small>Adidas Arena</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-e518f525c83f4882">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-05-23">2027-05-23</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-1682a452b2135a5c">Brakence</a>
+        <small>La Cigale</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-1682a452b2135a5c">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-05-29">2027-05-29</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-b38d54d9942167cb">Steel Pulse</a>
+        <small>Le Zénith Paris – La Villette</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-b38d54d9942167cb">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-06-01">2027-06-01</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-5a00219f0dd4a3f5">DIIV</a>
+        <small>L&#x27;Olympia Bruno Coquatrix</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-5a00219f0dd4a3f5">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-06-18">2027-06-18</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-66c5d636bda999fd">King Gizzard &amp; The Lizard Wizard</a>
+        <small>Le Zénith Paris – La Villette</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-66c5d636bda999fd">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-06-27">2027-06-27</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-5f1704d35da16fe5">Kool &amp; The Gang</a>
+        <small>Le Zénith Paris – La Villette</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-5f1704d35da16fe5">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-07-07">2027-07-07</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-9361702aa8adc58b">Santana</a>
+        <small>Accor Arena</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-9361702aa8adc58b">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-09-11">2027-09-11</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-7945a67e90addae3">Typhee</a>
+        <small>L&#x27;Olympia Bruno Coquatrix</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-7945a67e90addae3">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-10-26">2027-10-26</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-2ffa8869476ac074">William Shakespeare’s Romeo + Juliet : le Ciné-Concert</a>
+        <small>L&#x27;Olympia Bruno Coquatrix</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-2ffa8869476ac074">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-10-31">2027-10-31</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-7629a5594240737a">Collectif Métissé</a>
+        <small>L&#x27;Olympia Bruno Coquatrix</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-7629a5594240737a">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-11-11">2027-11-11</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-fae70528c4e2b278">Till Lindemann</a>
+        <small>Le Zénith Paris – La Villette</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-fae70528c4e2b278">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-12-02">2027-12-02</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-d68f36afa6f0a34f">Laura Cox</a>
+        <small>La Maroquinerie</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-d68f36afa6f0a34f">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-12-03">2027-12-03</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-44ad8bbae83d6f35">Laura Cox</a>
+        <small>La Maroquinerie</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-44ad8bbae83d6f35">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-12-05">2027-12-05</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-e9a0fbb1d5985cbb">Charlotte Cardin</a>
+        <small>Accor Arena</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-e9a0fbb1d5985cbb">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2027-12-10">2027-12-10</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-becf5dd8288a6ecf">Bruce Dickinson</a>
+        <small>L&#x27;Olympia Bruno Coquatrix</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-becf5dd8288a6ecf">View →</a>
+    </li>
+    </div><div class="ee-entry ee-extra">
+    <li class="ee-concert">
+      <time datetime="2028-04-16">2028-04-16</time>
+      <div>
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-8b24a0b3948ec592">Titanic Le Ciné-Concert</a>
+        <small>Le Zénith Paris – La Villette</small>
+      </div>
+      <a class="ee-calendar-link" href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html#event-8b24a0b3948ec592">View →</a>
+    </li>
+    </div></ul>
+      <button class="ee-expand" type="button" aria-expanded="false">Show all 56 concerts ↓</button>
+      <p class="ee-calendar-footer">
+        <a href="https://www.electriceyerock.com/p/paris-area-concert-calendar.html">
+          Explore the complete Paris Area Concert Calendar →
+        </a>
+      </p>
+    </section>
+    
+    <aside class="ee-forum">
+      <a href="https://www.electriceyerock.com/p/forums.html">
+        Join the conversation at the Electric Eye Forums →
+      </a>
+    </aside>
+    <footer class="ee-footer">
+      <p>Electric Eye - A music site with an emphasis on all things electric.</p>
+      <p><a href="https://www.electriceyerock.com/">Visit Electric Eye →</a></p>
+    </footer>
+  </main>
+  <script>
+    (function() {
+      'use strict';
+
+      var parentOrigin = 'https://www.electriceyerock.com';
+
+      function reportHeight() {
+        if (window.parent === window) return;
+
+        var wrapper = document.querySelector('.ee-wrapper');
+        if (!wrapper) return;
+
+        var height = Math.ceil(wrapper.getBoundingClientRect().height);
+
+        window.parent.postMessage({
+          type: 'electric-eye-newsletter-height',
+          height: height
+        }, parentOrigin);
+      }
+
+      document.querySelectorAll('.ee-expand').forEach(function(button) {
+        button.addEventListener('click', function() {
+          var section = button.closest('.ee-section');
+          var expanded = button.getAttribute('aria-expanded') === 'true';
+
+          section.querySelectorAll('.ee-extra').forEach(function(item) {
+            item.style.display = expanded ? 'none' : 'block';
+          });
+
+          button.setAttribute('aria-expanded', String(!expanded));
+          button.textContent = expanded ? 'Show all ↓' : 'Show fewer ↑';
+
+          reportHeight();
+        });
+      });
+
+      window.addEventListener('load', function() {
+        reportHeight();
+
+        if (window.parent !== window) {
+          window.parent.postMessage({
+            type: 'electric-eye-newsletter-ready'
+          }, parentOrigin);
+        }
+      });
+
+      if ('ResizeObserver' in window) {
+        var wrapper = document.querySelector('.ee-wrapper');
+        if (wrapper) {
+          new ResizeObserver(reportHeight).observe(wrapper);
+        }
+      }
+
+      reportHeight();
+    }());
+    </script>
+</body>
+</html>
